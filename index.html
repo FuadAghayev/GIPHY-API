@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Stop: It's Giphy time</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+
+<body>
+    <button data-animal="cat">cat</button>
+    <button data-animal="dog">dog</button>
+    <button data-animal="bird">frog</button>
+    <button data-animal="goldfish">goldfish</button>
+    <button data-animal="chicken">chicken</button>
+    <button data-animal="serval">serval</button>
+    <button data-animal="sugra glider">sugra glider</button>
+    <button data-animal="teacup">teacup pig</button>
+    <button data-animal="salamander">salamander</button>
+    <button data-animal="capybara">capybara</button>
+    <button data-animal="chincilla">chincilla</button>
+    <button data-animal="chincilla">big dog</button>
+    <div id="gifs-appear-here">
+
+  <img src="https://media3.giphy.com/media/W6LbnBigDe4ZG/200_s.gif" data-still="https://media3.giphy.com/media/W6LbnBigDe4ZG/200_s.gif" data-animate="https://media3.giphy.com/media/W6LbnBigDe4ZG/200.gif" data-state="still" class="gif">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <div style="width:100%;height:0;padding-bottom:72%;position:relative;"><iframe src="https://giphy.com/embed/kudIERso2pFiE" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/animal-cute-animals-dog-kudIERso2pFiE">via GIPHY</a></p>
+  <iframe src="https://giphy.com/embed/TOkrbID3iVCrC" width="480" height="272" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/movie-disney-cartoon-TOkrbID3iVCrC">via GIPHY</a></p>
+  <script type="text/javascript">
+    $(".gif").on("click", function() {
+      // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
+      var state = $(this).attr("data-state");
+      // If the clicked image's state is still, update its src attribute to what its data-animate value is.
+
+      // Constructing a queryURL using the animal name
+      var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
+        animal + "&api_key=dc6zaTOxFJmzC&limit=10";
+
+
+        var x = document.getElementsByClassName("form_class");
+x[0].submit();
+
+      if (state === "still") {
+        $(this).attr("src", $(this).attr("data-animate"));
+        $(this).attr("data-state", "animate");
+      } else {
+        $(this).attr("src", $(this).attr("data-still"));
+        $(this).attr("data-state", "still");
+      }
+    });
+    
+
+  </script>
+</body>
+
+</html>
